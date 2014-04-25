@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B1323BB6-3DA9-4A90-B71B-9302F75DE943</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CS32_Lab03</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>03EE2215-D6D1-4BE2-BD57-E62BB7C05993</key>
+		<string>https://github.com/xinglunxu/XinglunXu_Github.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CS32/CS32_Lab03/CS32_Lab03.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>03EE2215-D6D1-4BE2-BD57-E62BB7C05993</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xinglunxu/XinglunXu_Github.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>03EE2215-D6D1-4BE2-BD57-E62BB7C05993</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>03EE2215-D6D1-4BE2-BD57-E62BB7C05993</string>
+			<key>IDESourceControlWCCName</key>
+			<string>XinglunXu_Github</string>
+		</dict>
+	</array>
+</dict>
+</plist>
