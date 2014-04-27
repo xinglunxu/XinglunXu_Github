@@ -9,12 +9,24 @@ storevalues:
         # you may assume nothing about their starting values
 
         # globalA = 6
+        la $t0, globalA
+        ori $t1, $0, 6
+        sw $t1, 0($t0)
 
         # globalB = 6
-
+		la $t0, globalB
+        ori $t1, $0, 6
+        sw $t1, 0($t0)
+        
         # globalC = 30
-
+		la $t0, globalC
+        ori $t1, $0, 30
+        sw $t1, 0($t0)
+		
         # globalD = 30
+        la $t0, globalD
+        ori $t1, $0, 30
+        sw $t1, 0($t0)
 
         # do not remove this line
         jr $ra
@@ -26,13 +38,21 @@ storeregvalues:
         # you may assume that $a0-$a3 have already been set
 
         # globalA = $a3
-
+		la $t0, globalA
+        sw $a3, 0($t0)
+        
         # globalB = $a2
-
+		la $t0, globalB
+        sw $a2, 0($t0)
+        
         # globalC = $a1
-
+		la $t0, globalC
+        sw $a1, 0($t0)
+        
         # globalD = $a0
-
+		la $t0, globalD
+        sw $a0, 0($t0)
+		
         # do not remove this line
         jr $ra
 
