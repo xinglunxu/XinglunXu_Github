@@ -12,7 +12,7 @@
 #
 # declare global so programmer can see actual addresses.
 .globl prompt
-.globl biggest
+.globl largest
 .globl smallest
 #  Data Area - allocate and initialize variables
 .data
