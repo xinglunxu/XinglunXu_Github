@@ -1,0 +1,137 @@
+!SESSION 2014-04-30 14:26:54.843 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  encode.java
+Command-line arguments:  -os linux -ws gtk -arch x86_64 encode.java
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2014-04-30 14:29:11.537
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.eclipse.equinox.p2.reconciler.dropins_1.1.200.v20140324-2308.jar" by thread "Start Level Event Dispatcher".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1088)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:564)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1206)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.suspendBundle(PackageAdminImpl.java:326)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.processDelta(PackageAdminImpl.java:467)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.doResolveBundles(PackageAdminImpl.java:251)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl$1.run(PackageAdminImpl.java:174)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 8 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1088)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:564)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1206)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.suspendBundle(PackageAdminImpl.java:326)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.processDelta(PackageAdminImpl.java:467)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.doResolveBundles(PackageAdminImpl.java:251)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl$1.run(PackageAdminImpl.java:174)
+	at java.lang.Thread.run(Thread.java:744)
+
+!ENTRY org.eclipse.equinox.preferences 4 4 2014-04-30 14:29:11.602
+!MESSAGE Exception loading preferences from: .
+!STACK 0
+org.osgi.service.prefs.BackingStoreException: Unable to determine provisioning agent from location: file:\2ffs\2fstudent\2fxinglunxu\2f.eclipse\2forg.eclipse.platform_793567567_linux_gtk_x86_64\2fconfiguration\2f..\2fp2\2f
+	at org.eclipse.equinox.internal.p2.engine.ProfilePreferences.getAgent(ProfilePreferences.java:164)
+	at org.eclipse.equinox.internal.p2.engine.ProfilePreferences.load(ProfilePreferences.java:248)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:670)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:676)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:676)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.preferences.RootPreferences.getNode(RootPreferences.java:111)
+	at org.eclipse.core.internal.preferences.RootPreferences.node(RootPreferences.java:90)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getPreferences(AbstractRepositoryManager.java:503)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.remember(AbstractRepositoryManager.java:879)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.stop(AbstractRepositoryManager.java:1075)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.unregisterService(ProvisioningAgent.java:122)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.removedService(ProvisioningAgent.java:183)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:956)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.untrack(AbstractTracked.java:341)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:902)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:107)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.dispatchEvent(BundleContextImpl.java:861)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:819)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:771)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:225)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.disposeInstances(InstanceProcess.java:356)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.disposeInstances(InstanceProcess.java:306)
+	at org.eclipse.equinox.internal.ds.Resolver.disposeComponentConfigs(Resolver.java:724)
+	at org.eclipse.equinox.internal.ds.Resolver.disableComponents(Resolver.java:700)
+	at org.eclipse.equinox.internal.ds.SCRManager.stoppingBundle(SCRManager.java:554)
+	at org.eclipse.equinox.internal.ds.SCRManager.bundleChanged(SCRManager.java:233)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.dispatchEvent(BundleContextImpl.java:847)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEventPrivileged(Framework.java:1568)
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1504)
+	at org.eclipse.osgi.framework.internal.core.Framework.publishBundleEvent(Framework.java:1499)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:506)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:566)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1206)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.suspendBundle(PackageAdminImpl.java:326)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.processDelta(PackageAdminImpl.java:467)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.doResolveBundles(PackageAdminImpl.java:251)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl$1.run(PackageAdminImpl.java:174)
+	at java.lang.Thread.run(Thread.java:744)
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2014-04-30 14:29:23.473
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start() of bundle org.eclipse.equinox.p2.reconciler.dropins.
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:734)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.IllegalStateException: Attempt to access stopped agent: org.eclipse.equinox.internal.p2.core.ProvisioningAgent@130f298c
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.checkRunning(ProvisioningAgent.java:85)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.getService(ProvisioningAgent.java:49)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.ProfileSynchronizer.synchronize(ProfileSynchronizer.java:152)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.synchronize(Activator.java:468)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start(Activator.java:176)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	... 12 more
+Root exception:
+java.lang.IllegalStateException: Attempt to access stopped agent: org.eclipse.equinox.internal.p2.core.ProvisioningAgent@130f298c
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.checkRunning(ProvisioningAgent.java:85)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.getService(ProvisioningAgent.java:49)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.ProfileSynchronizer.synchronize(ProfileSynchronizer.java:152)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.synchronize(Activator.java:468)
+	at org.eclipse.equinox.internal.p2.reconciler.dropins.Activator.start(Activator.java:176)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 2 1 2014-04-30 14:31:26.818
+!MESSAGE NLS missing message: MergeWizardBestPracticesPage_invalidRevision in: com.collabnet.subversion.merge.messages

@@ -1,0 +1,4 @@
+// functions.h - Interface for the functions module
+
+void sayHello();
+void printDate();
