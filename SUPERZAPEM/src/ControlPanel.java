@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import java.text.DecimalFormat;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.Timer;
@@ -18,7 +19,7 @@ import javax.swing.Timer;
  */
 public class ControlPanel extends JPanel implements ActionListener, MouseListener
 {
-    private final static int PAUSE = 150; // milliseconds
+    private final static int INITIAL_PAUSE = 200; // milliseconds
     
     private final View view;
     private final Game game;
@@ -29,13 +30,17 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
     private final JLabel gameLevelLabel = new JLabel("Game Level");
     private final JTextField gameLevelTextField = new JTextField();
     
-    private final Timer animationTimer;
+    private Timer animationTimer;
     private long gameStartTime;
+    private int pause = INITIAL_PAUSE;
+    private int gameLevel;
     
     ControlPanel( View view, Game game ) 
     {
         this.view = view;
         this.game = game;
+        gameLevel = 4;
+        gameLevelTextField.setText(gameLevel+"");
      
         setLayout( new GridLayout( 1, 5 ) );
         add(gameLevelLabel);
@@ -43,8 +48,9 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
         add( newGameButton );
         add( gameDurationLabel );
         add( gameDurationTextField );
+        
 
-        animationTimer = new Timer( PAUSE, this );
+        animationTimer = new Timer( pause, this );
         gameDurationTextField.setEditable( false );
         initialize();
     }
@@ -75,7 +81,9 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
     //  controller for each action
     // _____________________________
     private void newGameButtonActionPerformed( ActionEvent actionEvent ) 
-    {
+    {      
+        
+        animationTimer.setDelay(pause);
         // set the text field to the empty string;
         gameDurationTextField.setText("");
         
@@ -83,12 +91,11 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
         gameStartTime = System.currentTimeMillis();
         
         // restart the Timer
-        animationTimer.restart();
+        animationTimer.start();
         
         // start the game. 
         game.start();
-        
-        
+            
     }
     /**
      * Implementation of ActionListener of Timer
@@ -106,13 +113,25 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
         //    b. get the current time, using System.currentTimeMillis
         //    c. compute the duration of the game
         //    d. set the TextField to this value, in seconds, with 3 significant digits to the right of the decimal point.
-        
+        long gameTime = (System.currentTimeMillis() - gameStartTime)/1000;
+        DecimalFormat myFormat = new DecimalFormat("0.000");
+        gameDurationTextField.setText(myFormat.format(gameTime));
         if(game.getGameState())
         {
             animationTimer.stop();
-            long gameTime = (System.currentTimeMillis() - gameStartTime)/1000;
-            DecimalFormat myFormat = new DecimalFormat("0.000");
-            gameDurationTextField.setText(myFormat.format(gameTime));
+            if(gameTime>10)
+            {
+                gameLevel--;
+                pause += 20;
+                JOptionPane.showMessageDialog(null,"Too Slow! Game level decrease.");
+            }
+            else
+            {
+                gameLevel++;
+                pause -= 20;
+                JOptionPane.showMessageDialog(null,"Good Job! Game level increase.");
+            }
+            gameLevelTextField.setText(gameLevel+"");
         }
         
     }
@@ -121,7 +140,13 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
     @Override
     public void mouseClicked( MouseEvent event ) 
     {
-        // your implementation of a listener for mouse click events goes here:
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent event) 
+    {
+    // your implementation of a listener for mouse click events goes here:
         // 1. stop the timer;
         animationTimer.stop();
         // 2. invoke the Game.processClick method with the x & y coordinates of the mouse click;
@@ -131,9 +156,6 @@ public class ControlPanel extends JPanel implements ActionListener, MouseListene
         // 4. repaint the view component.
         view.repaint();
     }
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
 
     @Override
     public void mouseReleased(MouseEvent e) {}

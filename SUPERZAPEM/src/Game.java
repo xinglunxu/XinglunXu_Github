@@ -17,6 +17,7 @@ public class Game
     public final static int CRITTER_SIZE = 60;
     private final static int MAXIMUM_SPEED = 24;
     private final static int MINIMUM_SPEED = 5;
+    private final static double SQUAREROOTOF3 = Math.sqrt(3);
     // other symbolic program constants go here
     
     private final Image image;
@@ -114,7 +115,7 @@ public class Game
         {
             // construct a critter, selected randomly from the 3 Critter subclasses 
             
-            int randomNum = (int)(random()*3);
+            int randomNum = (int)(random()*5);
             Critter critter = null;
             switch(randomNum)
             {
@@ -126,6 +127,12 @@ public class Game
                     break;
                 case 2: 
                     critter = new WowCritter();
+                    break;
+                case 3:
+                    critter = new PolyCritter();
+                    break;
+                case 4:
+                    critter = new ArcCritter();
                     break;
             }
             return critter;
@@ -170,7 +177,6 @@ public class Game
     private class SquareCritter extends Critter
     {
         
-        SquareCritter(){super();}
 
         @Override
         void draw(Graphics graphics) 
@@ -218,7 +224,21 @@ public class Game
         @Override
         void draw(Graphics graphics)
         {
-            
+            graphics.setColor(getColor());
+            graphics.fillPolygon( new int[]{getX(),getX()+CRITTER_SIZE/2,getX()-CRITTER_SIZE/2}, 
+            new int[]{getY()+(int)(SQUAREROOTOF3*CRITTER_SIZE/2-CRITTER_SIZE/(2*SQUAREROOTOF3)),getY()-(int)(CRITTER_SIZE/(2*SQUAREROOTOF3)), getY()-(int)(CRITTER_SIZE/(2*SQUAREROOTOF3))}, 3);
+            graphics.fillPolygon( new int[]{getX(),getX()+CRITTER_SIZE/2,getX()-CRITTER_SIZE/2}, 
+            new int[]{getY()-(int)(SQUAREROOTOF3*CRITTER_SIZE/2-CRITTER_SIZE/(2*SQUAREROOTOF3)),getY()+(int)(CRITTER_SIZE/(2*SQUAREROOTOF3)), getY()+(int)(CRITTER_SIZE/(2*SQUAREROOTOF3))}, 3);
+        }
+    }
+    
+    private class ArcCritter extends Critter
+    {
+        @Override
+        void draw(Graphics graphics)
+        {
+            graphics.setColor(getColor());
+            graphics.fillArc(getX()-CRITTER_SIZE/2, getY()-CRITTER_SIZE/2, CRITTER_SIZE, CRITTER_SIZE, 45, 270);
         }
     }
     
