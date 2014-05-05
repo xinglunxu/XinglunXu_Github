@@ -194,7 +194,6 @@ malloc:
 
 setvalue:
     # Set the value at index $a1 of array addressed in $a0 to the value in $a2; no return
-    la $a0, arr
     sll $a1, $a1, 2
     add $a0, $a0, $a1
     sw  $a2, 0($a0)	
@@ -203,7 +202,6 @@ setvalue:
 
 getvalue:
     # Get the value at index $a1 of array addressed in $a0; return the value in $v0
-    la $a0, arr	
     sll $a1, $a1, 2
     add $a0, $a0, $a1	
     lw $v0, 0($a0)
@@ -212,7 +210,10 @@ getvalue:
 
 findmin:
     # Find the minimum value in the array at $a0 of length $a1; return the value in $v0
-
+	
+	
+	
+	
     # Do not remove this line
     jr      $ra
 
