@@ -210,9 +210,23 @@ getvalue:
 
 findmin:
     # Find the minimum value in the array at $a0 of length $a1; return the value in $v0
+	lw $s0, 0($a0)
+	ori $t0, $0, 1
 	
+loop:
+	slt $t1, $t0, $a1
+	beq	$t1, $0, end
 	
-	
+	addi $a0, $a0, 4
+	lw $s1, 0($a0)
+	slt $t1, $s1, $s0
+	beq	$t1, $0, skip
+	or $s0, $s1, $0
+skip:
+	addi $t0, $t0, 1	
+	j loop
+end:
+	or $v0, $s0, $0
 	
     # Do not remove this line
     jr      $ra
