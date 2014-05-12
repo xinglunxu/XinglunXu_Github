@@ -160,6 +160,7 @@ loop:
 skip:
 	addi $t0, $t0, 1
 	addi $a0, $a0, 4
+	j loop
 
 endloop:
 	or $v0, $t1, $0
