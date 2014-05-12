@@ -151,21 +151,75 @@ countInstances:
 	# i=$t0 count=$t1 $s0=array[i]
 	or $t0, $0, $0
 	or $t1, $0, $0
-loop:
+loop1:
  	slt $t2, $t0, $a1
-	beq $t2, $0, endloop
+	beq $t2, $0, endloop1
 	lw $s0, 0($a0)
 	bne $s0, $a2, skip
 	addi $t1, $t1, 1
 skip:
 	addi $t0, $t0, 1
 	addi $a0, $a0, 4
-	j loop
+	j loop1
 
-endloop:
+endloop1:
 	or $v0, $t1, $0
 	jr	$ra
+	
+	
+	
+	
 secondLargest:
+	# $t0=i  $s0=largest $s1=nextLargest 
+	# $a0=*array $a1=length
+	# $t1=array[0] $t2=array[1]
+	lw $t0, 4($a0)
+	
+	ori $t3, $0, 2
+	slt $t1, $a1, $t3
+	beq	$t1, $0, normal
+	sll $v0, $t1, 31
+	jr 	$ra
+	
+normal:
+	lw $t1, 0($a0)
+	lw $t2, 4($a0)
+	slt $t3, $t1, $t2
+	beq, $t3, $0, skip_1
+	or $s0, $t2, $0
+	or $s1, $t1, $0
+	
+skip_1:
+	or $s0, $t1, $0
+	or $s1, $t2, $0
+	
+	ori $a0, $a0, 8
+	ori $t0, $0, 2
+loop2:	
+	slt $t1, $t0, $a1
+	beq $t1, $0, endloop2
+	
+	lw $t2, 0($a0)
+	slt $t1, $t2, $s0	
+	bne $t1, $0, elif
+	or $s1, $s0, $0
+	or $s0, $t2, $0
+	j skip_2
+	
+elif:
+	slt $t1, $s1, $t2
+	beq $t1, $0, skip_2
+	or $s1, $t2, $0 
+	
+skip_2:	
+	addi $a0, $a0, 4
+	addi $t0, $t0, 1
+	j loop2
+		
+endloop2:
+	or $v0, $s1, $0
+	jr	$ra
+	
 countBs:
 	jr      $ra
 
