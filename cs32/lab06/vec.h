@@ -23,8 +23,12 @@ class Vec3 {
     void set_x(double);
     void set_y(double);
     void set_z(double);
-    
     // DECLARE ANY MORE MEMBER FUNCTIONS HERE
+    Vec3& operator+=(const Vec3&);
+    Vec3& operator++(int);
+    Vec3& operator++();
+    double& operator[](int);
+    const double& operator[](int) const;
 
 
  private:

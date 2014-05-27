@@ -221,7 +221,6 @@ public class Game
     
     private class PolyCritter extends Critter
     {
-        @Override
         void draw(Graphics graphics)
         {
             graphics.setColor(getColor());

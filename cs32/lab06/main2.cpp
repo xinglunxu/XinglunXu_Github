@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 
 // For testing the three homework items (actually five functions):
 
-    /* Uncomment the following 2 lines when += is overloaded*/
+    // Uncomment the following 2 lines when += is overloaded*/
     //cout << "Input vec += constant vec: " << (vec_0 += vec_1) << endl;
     //cout << "     Verify still changed: " << vec_0 << endl;
     
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     //cout << "  Verify diff: " << vec_0 << endl;
 
     /* Uncomment the following 3 lines when both versions of [] overloaded */
-    //cout << "Constant's data: " << vec_1[0] << " " << vec_1[1] << " " << vec_1[2] << endl;
-    //vec_0[0] = vec_0[1] = vec_0[2] = 77.77;
-    //cout << "Final vec: " << vec_0 << endl;
+    cout << "Constant's data: " << vec_1[0] << " " << vec_1[1] << " " << vec_1[2] << endl;
+    vec_0[0] = vec_0[1] = vec_0[2] = 77.77;
+    cout << "Final vec: " << vec_0 << endl;
 }

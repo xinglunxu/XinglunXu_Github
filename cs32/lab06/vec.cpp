@@ -38,3 +38,47 @@ istream& operator>>(istream& is, Vec3& vec3)
   vec3.set_z(z);
   return is;
 }
+
+Vec3& Vec3::operator+=(const Vec3& vec3)
+{
+  set_x(get_x()+vec3.get_x());
+  set_y(get_y()+vec3.get_y());
+  set_z(get_z()+vec3.get_z());
+  return *this;
+}
+
+Vec3& Vec3::operator++(int a)
+{
+  set_x(get_x()+1);
+  set_y(get_y()+1);
+  set_z(get_z()+1);
+  return *this;
+}
+
+
+Vec3& Vec3::operator++()
+{
+  set_x(get_x()+1);
+  set_y(get_y()+1);
+  set_z(get_z()+1);
+  return *this;
+}
+
+double& Vec3::operator[](int i)
+{
+  if(i==0)return x;
+  if(i==1)return y;
+  if(i==2)return z;
+}
+
+const double& Vec3::operator[](int i) const
+{
+  if(i==0)return x;
+  if(i==1)return y;
+  if(i==2)return z;
+}
+
+
+
+
+

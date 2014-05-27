@@ -135,3 +135,39 @@ java.lang.IllegalStateException: Attempt to access stopped agent: org.eclipse.eq
 
 !ENTRY org.eclipse.osgi 2 1 2014-04-30 14:31:26.818
 !MESSAGE NLS missing message: MergeWizardBestPracticesPage_invalidRevision in: com.collabnet.subversion.merge.messages
+!SESSION 2014-05-16 10:00:37.653 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-16 10:02:04.926
+!MESSAGE NLS missing message: MergeWizardBestPracticesPage_invalidRevision in: com.collabnet.subversion.merge.messages
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-05-16 10:06:32.885
+!MESSAGE Indexed 'lab07' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.ui 4 4 2014-05-16 10:08:43.258
+!MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+
+!ENTRY org.eclipse.ui 4 4 2014-05-16 10:08:43.559
+!MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+!SESSION 2014-05-21 14:03:21.301 -----------------------------------------------
+eclipse.buildId=4.3.2.3fc20
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-21 14:04:09.873
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-21 14:04:35.252
+!MESSAGE NLS missing message: MergeWizardBestPracticesPage_invalidRevision in: com.collabnet.subversion.merge.messages
+
+!ENTRY org.eclipse.ui 4 4 2014-05-21 14:13:51.439
+!MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+
+!ENTRY org.eclipse.debug.ui 4 0 2014-05-21 14:32:18.702
+!MESSAGE Tab group extension: org.eclipse.cdt.launch.applicationProfileLaunchTabGroup for type org.eclipse.cdt.launch.applicationLaunchType for the [profile] mode has been replaced by extension: org.eclipse.cdt.launch.applicationProfileLaunchTabGroup

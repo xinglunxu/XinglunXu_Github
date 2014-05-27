@@ -221,5 +221,36 @@ endloop2:
 	jr	$ra
 	
 countBs:
+	# i=$t0 count=$s0 val=$s1 &&=s2 $t2=80 $t3=90 $t4=2
+	or $t0, $0, $0
+	or $s0, $0, $0
+	ori $t2, $t2, 80
+	ori $t3, $t3, 90
+	ori $t4, $0, 2
+	
+loop3:
+	slt $t1, $t0, $a1
+	beq $t1, $0, endloop3
+	lw $s1, 0($a0)
+
+	or $s2, $0, $0
+	slt $t1, $s1, $t2
+	bne $t1, $0, skip_3
+	addi $s2, $s2, 1
+skip_3:
+	slt $t1, $s1, $t3
+	beq $t1, $0, skip_4
+	addi $s2, $s2, 1
+skip_4:
+	bne $t4, $s2, skip_5
+	addi $s0, $s0, 1
+
+skip_5:	
+	addi $t0, $t0, 1
+	addi $a0, $a0, 4
+	j loop3
+
+endloop3:
+	or $v0, $s0, $0
 	jr      $ra
 
