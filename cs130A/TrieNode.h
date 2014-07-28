@@ -17,10 +17,13 @@ private:
     BasicTrieNode *ptr[TrieMaxElem];
 public:
     TrieNode();
+    TrieNode(BasicTrieNode*);
     void setPtr(int index, BasicTrieNode* BN){ptr[index] = BN;}
     BasicTrieNode* getPtr(int index){return ptr[index];}
     int WhoAmI() {return 1;}
-    bool CheckTrie(int*){return true;}; // Changed 7/14
+    bool CheckTrie(int*);
+    ~TrieNode();
+    bool empty();
 };
 
 #endif

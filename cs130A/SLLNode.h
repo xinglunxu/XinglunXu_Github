@@ -20,6 +20,8 @@ public:
     void Insert( int );
     int DeleteMin( int );
     int getData(){return data;}
+    bool Check(int*, int);
+    ~SLLNode();
 };
 
 

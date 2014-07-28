@@ -14,3 +14,11 @@ void BasicTrieNode::printMS()
     else{ptr2ms->printMember();}
     
 }
+
+BasicTrieNode::~BasicTrieNode(){if(ptr2ms!=NULL){delete ptr2ms; ptr2ms = NULL;}}
+
+bool BasicTrieNode::CheckTrie(int* pcount)
+{if(ptr2ms == 0) {return false;}
+    *pcount=*pcount+1;                             // Changed 7/10
+    return true;
+}

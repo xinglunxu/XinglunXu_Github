@@ -25,8 +25,11 @@ public:
     WBLTNode* getRight(){return rightchild;}
     WBLTNode* getLeft(){return leftchild;}
     void setRight(WBLTNode* n){rightchild = n;}
+    void setLeft(WBLTNode* n){leftchild = n;}
     void setWeight(int w){this->w = w;}
     void adjustBalance();
+    bool Check(int*, int);
+    ~WBLTNode();
 };
 
 

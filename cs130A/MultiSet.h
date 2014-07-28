@@ -8,6 +8,7 @@
 #ifndef Project_for_cs130A_MultiSet_h
 #define Project_for_cs130A_MultiSet_h
 #include <iostream>
+using namespace std;
 
 class MultiSet{
 private:
@@ -21,6 +22,17 @@ public:
     virtual void insert(int){};
     void increaseNum(){number++;}
     virtual void printMember(){};
+    virtual MultiSet* changeStruct(){cout<<"bug in multiset.h";return NULL;};
+    MultiSet* getPrevious(){return ptr2previousVersion;}
+    void setPrevious(MultiSet* ms){ptr2previousVersion = ms;}
+    void setNumber(int num){number = num;}
+    virtual void DeleteMin(){};
+    virtual void PrintMin(){};
+    virtual void PrintMax(){};
+    virtual int Dist(int i){return 1000;};
+    virtual void PrintKth(int i){};
+    virtual void DeleteKth(int i){};
+    virtual bool Check(int*){return false;};
 };
 
 

@@ -25,11 +25,14 @@ public:
     void addWBLT(){ptr2ms = new WBLT(ptr2ms);numOfMS++;}
     MultiSet* getMultiSet(){return ptr2ms;}
     BasicTrieNode(){ptr2ms = NULL; numOfMS=0;}
-    BasicTrieNode(MultiSet* ms){ptr2ms = ms; numOfMS++;}
+    BasicTrieNode(BasicTrieNode* BT){ptr2ms = BT->getMultiSet(); numOfMS=BT->getNumOfMS();}
+    BasicTrieNode(MultiSet* ms){ptr2ms = ms; numOfMS = 1;}
     virtual int WhoAmI() {return(0);}
-    virtual bool CheckTrie(int*){return true;}
+    virtual bool CheckTrie(int*);
     int getNumOfMS(){return numOfMS;}
     void printMS();
+    void addMS(int i){numOfMS+=i;}
+    ~BasicTrieNode();
     // Changed 7/14
 };
 
